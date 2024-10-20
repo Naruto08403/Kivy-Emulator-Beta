@@ -1,0 +1,111 @@
+<MyButton@Button>:
+    background_color:0,1,1,1
+    font_size:28
+    on_release: app.clicked(self.text)
+    on_text:
+        print(self.text)
+        if self.text in '+-x/':self.background_color=[0,0,1,1] 
+        if self.text == '=': self.background_color = [0,1,0,1]
+
+
+
+Design:
+    orientation:'vertical'
+    spacing:20
+    padding:20
+    Label:
+        text:'Kivy Calculator'
+        size_hint_y:None
+        height:100
+        font_size:40
+    TextInput:
+        # size_hint:.8,None
+        readonly:True
+        size_hint_x:.8
+        size_hint_y:None
+        height:50
+        pos_hint:{'center_x':.5}
+        id:answer
+    GridLayout:
+        cols : 4
+        MyButton:
+            text:'1' 
+        MyButton:
+            text:'2'
+        MyButton:
+            text:'3'
+        MyButton:
+            text:'+'
+        MyButton:
+            text:'4' 
+        MyButton:
+            text:'5'
+        MyButton:
+            text:'6'
+        MyButton:
+            text:'-'
+        MyButton:
+            text:'7' 
+        MyButton:
+            text:'8'
+        MyButton:
+            text:'9'
+        MyButton:
+            text:'x'
+        MyButton:
+            text:'0' 
+        MyButton:
+            text:'.'
+        MyButton:
+            text:'/'
+        MyButton:
+            text:'='
+
+
+
+    # BoxLayout:
+    #     orientation:'vertical'
+    #     BoxLayout:
+    #         MyButton:
+    #             text:'1' 
+    #         MyButton:
+    #             text:'2'
+    #         MyButton:
+    #             text:'3'
+    #         MyButton:
+    #             text:'+'
+    #     BoxLayout:
+    #         MyButton:
+    #             text:'4'
+    #         MyButton:
+    #             text:'5'
+    #         MyButton:
+    #             text:'6'
+    #         MyButton:
+    #             text:'-'
+    #     BoxLayout:
+    #         MyButton:
+    #             text:'7'
+    #         MyButton:
+    #             text:'8'
+    #         MyButton:
+    #             text:'9'
+    #         MyButton:
+    #             text:'x'
+    #     BoxLayout:
+    #         MyButton:
+    #             text:'0'
+    #         MyButton:
+    #             text:'.'
+    #         MyButton:
+    #             text:'/'
+    #         MyButton:
+    #             text:'='
+        
+        
+        
+            
+                
+
+
+        

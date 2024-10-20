@@ -1,0 +1,59 @@
+Screen:
+    name:'login'
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing:30
+        Label:
+            text:'[color=#ff0000]Login[/color] [sup]Screen[/sup]'
+            font_size:40
+            markup:True
+            size_hint_y:None
+        Widget:
+        MDTextField:
+            size_hint_x : .8
+            pos_hint:{'center_x':.5}
+            id:username
+
+            MDTextFieldHintText:
+                text: "Username"
+
+            MDTextFieldHelperText:
+                text: "Helper text"
+                mode: "persistent"
+        
+        MDTextField:
+            size_hint_x : .8
+            id:password
+            pos_hint:{'center_x':.5}
+
+            MDTextFieldHintText:
+                text: "Password"
+
+            MDTextFieldHelperText:
+                text: "Helper text"
+                mode: "persistent"
+        Label:
+            # text:'test error'
+            color:1,0,0,1
+            size_hint_y:None 
+            height:30
+            id:errorlabel
+        MDBoxLayout:
+            adaptive_height:True
+            padding:50,0
+            spacing:70
+            Button:
+                text:'Signup'
+                size_hint_y:None
+                height:50
+                on_release:app.root.current='signup'
+            
+            Button:
+                text:'Login'
+                size_hint_y:None
+                height:50
+                on_release:app.login()
+
+            
+            
+        Widget:
